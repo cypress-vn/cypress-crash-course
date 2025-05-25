@@ -93,3 +93,15 @@
       ]
     }
     ```
+
+- Lưu ý: đuôi file: `.cy.ts` thay vì `.cy.js` để sử dụng TypeScript.
+- Code example:
+```typescript
+describe("Register Form tests", () => {
+    it("Should show register form", () => {
+        cy.visit("https://material.playwrightvn.com");
+        cy.contains("Bài học 1: Register Page (có đủ các element)").click();
+        cy.get("h1").should("have.text", "User Registration");
+    })
+});
+```
