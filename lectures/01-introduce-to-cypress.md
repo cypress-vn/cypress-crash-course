@@ -49,7 +49,7 @@
   - `cypress/support`: Custom commands và cấu hình.
   - `cypress.config.js`: File cấu hình chính của Cypress.
 
-### 3. Chạy thử nghiệm đầu tiên (45 phút)
+### 3. Chạy thử nghiệm đầu tiên
 - **Viết test case mẫu**
   - Tạo file `first-test.spec.js` trong thư mục `cypress/integration`.
   - Nội dung ví dụ:
@@ -72,21 +72,24 @@
   - Chọn file `first-test.spec.js` để chạy.
   - Quan sát giao diện Test Runner: Xem kết quả, log, và snapshot.
 
-### 4. Thực hành và thảo luận (15 phút)
-- **Bài tập thực hành**
-  - Viết một test case kiểm tra việc truy cập trang `https://www.google.com` và xác minh tiêu đề trang chứa từ "Google".
-  - Chạy test và quan sát kết quả trong Test Runner.
-- **Thảo luận**
-  - Những lỗi thường gặp khi cài đặt (ví dụ: thiếu Node.js, lỗi mạng).
-  - Cách sử dụng tài liệu chính thức của Cypress: [https://docs.cypress.io](https://docs.cypress.io).
-  - Câu hỏi từ học viên.
-
-## Tài liệu cần chuẩn bị
-- Laptop đã cài Node.js, npm, và trình duyệt Chrome/Firefox.
-- Tài liệu tham khảo: [Cypress Getting Started](https://docs.cypress.io/guides/getting-started/installing-cypress).
-- Ứng dụng web mẫu: Sử dụng `https://example.com` hoặc `https://www.google.com`.
-
-## Kết quả đầu ra
-- Học viên hiểu được vai trò của Cypress và quy trình kiểm thử tự động.
-- Cài đặt thành công môi trường Cypress.
-- Chạy được test case đầu tiên và hiểu cách sử dụng Test Runner.
+### 4. Cài đặt và cấu hình TypeScript cho Cypress
+- **Cài đặt TypeScript**
+  - Cài đặt TypeScript và các package cần thiết:
+    ```bash
+    npm install typescript @types/node @types/mocha --save-dev
+    ```
+  - Tạo file cấu hình TypeScript `tsconfig.json`:
+    ```json
+    {
+      "compilerOptions": {
+        "target": "es6",
+        "module": "commonjs",
+        "strict": true,
+        "esModuleInterop": true,
+        "types": ["cypress"]
+      },
+      "include": [
+        "cypress/**/*.ts"
+      ]
+    }
+    ```
